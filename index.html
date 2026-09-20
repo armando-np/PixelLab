@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="PixelLab: iluminación inteligente, WLED, tiras LED, controladores, fuentes, kits y herramientas técnicas.">
+  <title>PixelLab — Iluminación inteligente</title>
+  <link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top"><span class="brand-mark">P</span><span>PixelLab</span></a>
+      <nav>
+        <a href="#tienda">Tienda</a>
+        <a href="#kits">Kits</a>
+        <a href="#configurador">Configura</a>
+        <a href="#herramientas">Herramientas</a>
+        <a href="#lab">Lab</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="ghost" id="searchBtn">Buscar</button>
+        <button class="cart" id="cartBtn">Carrito <span id="cartCount">0</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">LED · WLED · IoT · Domótica</span>
+          <h1>Construye iluminación inteligente sin adivinar qué necesitas.</h1>
+          <p class="hero-copy">Tiras LED, controladores, fuentes, perfiles y kits completos. Compra por pieza o deja que PixelLab calcule una instalación completa.</p>
+          <div class="hero-cta">
+            <a class="btn primary" href="#configurador">Configurar mi proyecto</a>
+            <a class="btn secondary" href="#kits">Ver kits Ready-to-Go</a>
+          </div>
+          <div class="trust-row">
+            <span>Precios en MXN</span><span>Retiro en Coyoacán</span><span>Especificaciones técnicas</span>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="mock-led"></div>
+          <div class="hero-card-content">
+            <div class="mini-label">PIXELLAB TOOLS</div>
+            <strong>Diseña primero. Compra después.</strong>
+            <p>Potencia · fuente · cableado · inyección · kit</p>
+            <a href="#herramientas">Abrir herramientas →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="tienda">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="eyebrow">Tienda</span><h2>Componentes seleccionados para proyectos reales</h2></div>
+          <button class="text-btn" id="showAll">Ver catálogo completo →</button>
+        </div>
+        <div class="category-row">
+          <button class="pill active" data-filter="all">Todo</button>
+          <button class="pill" data-filter="strip">Tiras LED</button>
+          <button class="pill" data-filter="controller">Controladores</button>
+          <button class="pill" data-filter="power">Fuentes</button>
+          <button class="pill" data-filter="accessory">Accesorios</button>
+        </div>
+        <div class="product-grid" id="productGrid"></div>
+      </div>
+    </section>
+
+    <section class="section dark-section" id="kits">
+      <div class="container">
+        <div class="section-head light">
+          <div><span class="eyebrow">Ready-to-Go</span><h2>Kits completos. Una sola compra.</h2></div>
+          <p>La misma lógica de compra guiada que funciona bien en soluciones WLED modernas, adaptada a precios y disponibilidad local.</p>
+        </div>
+        <div class="kit-grid" id="kitGrid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="configurador">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="eyebrow">Project Builder</span><h2>Configura tu proyecto</h2></div>
+          <p>Dinos qué quieres iluminar y PixelLab genera una primera configuración de compra.</p>
+        </div>
+        <div class="builder">
+          <div class="builder-step">
+            <label>1 · Uso</label>
+            <div class="option-grid" id="useOptions">
+              <button data-use="tv">TV</button><button data-use="monitor">Monitor</button><button data-use="desk">Escritorio</button><button data-use="kitchen">Cocina</button><button data-use="cabinet">Mueble</button><button data-use="custom">Personalizado</button>
+            </div>
+          </div>
+          <div class="builder-step">
+            <label>2 · Tira</label>
+            <select id="stripSelect"></select>
+          </div>
+          <div class="builder-step split">
+            <div><label>3 · Longitud</label><input id="lengthInput" type="number" min="0.5" max="100" step="0.5" value="5"></div>
+            <div><label>4 · Brillo máximo</label><input id="brightnessInput" type="number" min="20" max="100" step="5" value="80"><span class="suffix">%</span></div>
+          </div>
+          <div class="builder-result" id="builderResult"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="herramientas">
+      <div class="container">
+        <div class="section-head"><div><span class="eyebrow">PixelLab Tools</span><h2>Calcula antes de comprar</h2></div><p>Inspirado en el enfoque técnico de WLED System Architect: números claros, recomendaciones y márgenes explícitos.</p></div>
+        <div class="tool-grid">
+          <article class="tool-card"><span class="tool-num">01</span><h3>Calculadora de potencia</h3><p>Estimación de W, A y fuente recomendada.</p><button class="text-btn" data-tool="power">Abrir →</button></article>
+          <article class="tool-card"><span class="tool-num">02</span><h3>Caída de voltaje</h3><p>Base para decidir cableado e inyección.</p><button class="text-btn" data-tool="voltage">Abrir →</button></article>
+          <article class="tool-card"><span class="tool-num">03</span><h3>Constructor de kit</h3><p>Convierte el cálculo en una compra completa.</p><button class="text-btn" onclick="location.hash='configurador'">Abrir →</button></article>
+          <article class="tool-card"><span class="tool-num">04</span><h3>Comparar tiras</h3><p>Voltaje, densidad, RGBW y uso recomendado.</p><button class="text-btn" data-tool="compare">Abrir →</button></article>
+        </div>
+        <div class="calculator" id="calculator"></div>
+      </div>
+    </section>
+
+    <section class="section lab" id="lab">
+      <div class="container">
+        <div class="section-head"><div><span class="eyebrow">PixelLab Lab</span><h2>La tienda también enseña</h2></div><p>Guías para elegir, instalar, configurar WLED y resolver problemas sin comprar a ciegas.</p></div>
+        <div class="lab-grid">
+          <article><span>Guía</span><h3>RGB vs RGBW</h3><p>Qué cambia realmente cuando agregas un canal blanco dedicado.</p></article>
+          <article><span>Guía</span><h3>5V vs 12V</h3><p>Cómo elegir voltaje según longitud, corriente y distribución.</p></article>
+          <article><span>WLED</span><h3>Primer proyecto</h3><p>Controlador, alimentación, configuración inicial y seguridad.</p></article>
+          <article><span>Troubleshooting</span><h3>Flickering</h3><p>Checklist de alimentación, datos, tierra común e inyección.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <aside class="drawer" id="cartDrawer" aria-hidden="true"><div class="drawer-head"><h2>Carrito</h2><button id="closeCart">×</button></div><div id="cartItems"></div><div class="cart-total"><span>Total</span><strong id="cartTotal">$0 MXN</strong></div><button class="btn primary full" id="checkoutBtn">Continuar</button></aside>
+  <div class="overlay" id="overlay"></div>
+  <div class="modal" id="productModal"><button class="modal-close" id="closeModal">×</button><div id="modalBody"></div></div>
+  <script src="data/products.js"></script>
+  <script src="src/app.js"></script>
+</body>
+</html>
