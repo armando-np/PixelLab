@@ -14,10 +14,12 @@
       <nav>
         <a href="#tienda">Tienda</a>
         <a href="#kits">Kits</a>
+        <a href="#proyectos">Proyectos</a>
         <a href="#por-que-pixellab">Por qué PixelLab</a>
         <a href="#configurador">Configura</a>
         <a href="#herramientas">Herramientas</a>
         <a href="#lab">Lab</a>
+        <a class="wa-nav" href="https://wa.me/525638944059?text=Hola%20PixelLab,%20quiero%20asesor%C3%ADa%20para%20un%20proyecto%20LED" target="_blank" rel="noopener">WhatsApp</a>
       </nav>
       <div class="nav-actions">
         <button class="ghost" id="searchBtn">Buscar</button>
@@ -41,13 +43,23 @@
             <span>Precios en MXN</span><span>Retiro en Coyoacán</span><span>Especificaciones técnicas</span>
           </div>
         </div>
-        <div class="hero-card">
-          <div class="mock-led"></div>
-          <div class="hero-card-content">
-            <div class="mini-label">PIXELLAB TOOLS</div>
-            <strong>Diseña primero. Compra después.</strong>
-            <p>Potencia · fuente · cableado · inyección · kit</p>
-            <a href="#herramientas">Abrir herramientas →</a>
+        <div class="hero-projects" aria-label="Proyectos realizados por PixelLab">
+          <div class="project-main">
+            <img src="assets/projects/project-01.jpg" alt="Proyecto PixelLab de iluminación ambiental en exterior" loading="eager">
+            <div class="project-overlay">
+              <span>PROYECTO PIXELLAB</span>
+              <strong>Iluminación ambiental personalizada</strong>
+              <small>Una instalación real, no una simulación.</small>
+            </div>
+          </div>
+          <div class="project-side">
+            <div class="project-side-image"><img src="assets/projects/project-02.jpg" alt="Proyecto PixelLab de iluminación RGB en dormitorio" loading="eager"></div>
+            <div class="hero-card-mini">
+              <div class="mini-label">PIXELLAB TOOLS</div>
+              <strong>Diseña primero. Compra después.</strong>
+              <p>Potencia · fuente · cableado · inyección · kit</p>
+              <a href="#herramientas">Abrir herramientas →</a>
+            </div>
           </div>
         </div>
       </div>
@@ -72,6 +84,25 @@
         <div class="why-note">
           <div><strong>No vendemos sólo tiras LED.</strong><span>Diseñamos la solución completa: componente + cálculo + kit + soporte.</span></div>
           <a class="btn secondary" href="#configurador">Configura tu proyecto →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section projects-section" id="proyectos">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="eyebrow">Proyectos reales</span><h2>Así se ve PixelLab instalado.</h2></div>
+          <p>Estas imágenes provienen de proyectos reales. La galería crecerá conforme añadamos nuevas instalaciones y kits.</p>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card project-card-wide">
+            <img src="assets/projects/project-01.jpg" alt="Proyecto PixelLab de iluminación exterior con tonos violeta y azul" loading="lazy">
+            <div><span>Exterior · Ambiente</span><h3>Iluminación ambiental exterior</h3><p>Proyecto con iluminación dinámica para transformar un espacio sin perder el carácter del lugar.</p></div>
+          </article>
+          <article class="project-card">
+            <img src="assets/projects/project-02.jpg" alt="Proyecto PixelLab de iluminación RGB en dormitorio" loading="lazy">
+            <div><span>Interior · RGB</span><h3>Iluminación ambiental interior</h3><p>Una instalación RGB pensada para crear atmósferas y escenas personalizadas.</p></div>
+          </article>
         </div>
       </div>
     </section>
@@ -133,12 +164,24 @@
       <div class="container">
         <div class="section-head"><div><span class="eyebrow">PixelLab Tools</span><h2>Calcula antes de comprar</h2></div><p>Inspirado en el enfoque técnico de WLED System Architect: números claros, recomendaciones y márgenes explícitos.</p></div>
         <div class="tool-grid">
-          <article class="tool-card"><span class="tool-num">01</span><h3>Calculadora de potencia</h3><p>Estimación de W, A y fuente recomendada.</p><button class="text-btn" data-tool="power">Abrir →</button></article>
+          <article class="tool-card"><span class="tool-num">01</span><h3>Calculadora de potencia</h3><p>LED/m, longitud, brillo, fuente, fusible y cable.</p><button class="text-btn" data-tool="power">Abrir →</button></article>
           <article class="tool-card"><span class="tool-num">02</span><h3>Caída de voltaje</h3><p>Base para decidir cableado e inyección.</p><button class="text-btn" data-tool="voltage">Abrir →</button></article>
           <article class="tool-card"><span class="tool-num">03</span><h3>Constructor de kit</h3><p>Convierte el cálculo en una compra completa.</p><button class="text-btn" onclick="location.hash='configurador'">Abrir →</button></article>
-          <article class="tool-card"><span class="tool-num">04</span><h3>Comparar tiras</h3><p>Voltaje, densidad, RGBW y uso recomendado.</p><button class="text-btn" data-tool="compare">Abrir →</button></article>
+          <article class="tool-card"><span class="tool-num">04</span><h3>Costo operativo</h3><p>Cuánto cuesta usar tu instalación por hora, día, mes y año.</p><button class="text-btn" data-tool="cost">Abrir →</button></article>
+          <article class="tool-card"><span class="tool-num">05</span><h3>Comparar tiras</h3><p>Voltaje, densidad, tipo LED y precio.</p><button class="text-btn" data-tool="compare">Abrir →</button></article>
         </div>
         <div class="calculator" id="calculator"></div>
+      </div>
+    </section>
+
+    <section class="section contact-strip">
+      <div class="container contact-card">
+        <div>
+          <span class="eyebrow">Asesoría PixelLab</span>
+          <h2>¿No sabes exactamente qué necesitas?</h2>
+          <p>Mándanos tu proyecto por WhatsApp. Podemos ayudarte a elegir tira, controlador, fuente y configuración.</p>
+        </div>
+        <a class="btn primary" href="https://wa.me/525638944059?text=Hola%20PixelLab,%20quiero%20asesor%C3%ADa%20para%20un%20proyecto%20LED" target="_blank" rel="noopener">WhatsApp · 563 894 4059</a>
       </div>
     </section>
 
@@ -158,6 +201,7 @@
   <aside class="drawer" id="cartDrawer" aria-hidden="true"><div class="drawer-head"><h2>Carrito</h2><button id="closeCart">×</button></div><div id="cartItems"></div><div class="cart-total"><span>Total</span><strong id="cartTotal">$0 MXN</strong></div><button class="btn primary full" id="checkoutBtn">Continuar</button></aside>
   <div class="overlay" id="overlay"></div>
   <div class="modal" id="productModal"><button class="modal-close" id="closeModal">×</button><div id="modalBody"></div></div>
+  <a class="whatsapp-float" href="https://wa.me/525638944059?text=Hola%20PixelLab,%20quiero%20asesor%C3%ADa%20para%20un%20proyecto%20LED" target="_blank" rel="noopener" aria-label="Contactar a PixelLab por WhatsApp">WA</a>
   <script src="data/products.js"></script>
   <script src="src/app.js"></script>
 </body>
