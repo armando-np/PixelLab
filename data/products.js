@@ -1,14 +1,83 @@
 window.PIXELLAB_PRODUCTS = [
-  {id:'sk6812-rgbw-5m', type:'strip', name:'SK6812 RGBW 5m', subtitle:'60 LED/m · 5V · IP65', price:449, specs:['SK6812','RGBW','5V','60 LED/m','5 m','IP65'], description:'Tira direccionable RGBW para efectos WLED y blanco dedicado.'},
-  {id:'ws2815-12v-5m', type:'strip', name:'WS2815 RGB 12V 5m', subtitle:'60 LED/m · 12V · IP65', price:369, specs:['WS2815','RGB','12V','60 LED/m','5 m','IP65'], description:'Tira RGB direccionable de 12V para proyectos donde conviene reducir corriente y facilitar recorridos largos.'},
-  {id:'ws2812b-5v-5m', type:'strip', name:'WS2812B RGB 5m', subtitle:'60 LED/m · 5V · IP65', price:249, specs:['WS2812B','RGB','5V','60 LED/m','5 m','IP65'], description:'Opción de entrada para proyectos WLED con gran disponibilidad de efectos y accesorios.'},
-  {id:'gledopto-zigbee', type:'controller', name:'GLEDOPTO Zigbee 3.0 Pro', subtitle:'GL-C-008P', price:399, specs:['Zigbee 3.0','GLEDOPTO','GL-C-008P'], description:'Controlador orientado a integración con ecosistemas de automatización compatibles.'},
-  {id:'gledopto-wled-esp32', type:'controller', name:'GLEDOPTO WLED ESP32 WiFi', subtitle:'GL-C-103P', price:479, specs:['ESP32','WiFi','WLED','GL-C-103P'], description:'Controlador WiFi para proyectos direccionables basados en WLED.'},
-  {id:'gledopto-mini-wled', type:'controller', name:'GLEDOPTO Mini WLED Controller', subtitle:'Compacto · WiFi', price:269, specs:['WLED','WiFi','GLEDOPTO'], description:'Controlador compacto para proyectos pequeños y kits de inicio.'},
-  {id:'ps-5v-15a', type:'power', name:'Fuente Conmutada 5V 15A', subtitle:'75W', price:269, specs:['5V','15A','75W'], description:'Fuente para proyectos de 5V con demanda elevada.'},
-  {id:'ps-12v-5a-slim', type:'power', name:'Fuente Slim 12V 5A', subtitle:'60W', price:169, specs:['12V','5A','60W','Slim'], description:'Formato delgado para proyectos WS2815 y otras cargas de 12V.'},
-  {id:'ps-5v-10a', type:'power', name:'Fuente Conmutada 5V 10A', subtitle:'50W', price:179, specs:['5V','10A','50W'], description:'Fuente compacta para kits 5V de menor escala.'},
-  {id:'cable-jst', type:'accessory', name:'Kit cable cobre 20AWG + conectores JST', subtitle:'Accesorios de instalación', price:99, specs:['20AWG','Cobre','JST'], description:'Kit base de cableado y conexiones para proyectos PixelLab.'}
+  {
+    id:'sk6812-rgbw-5m', type:'strip', name:'SK6812 RGBW 5m', subtitle:'60 LED/m · 5V · IP65', price:449,
+    specs:['SK6812','RGBW','5V','60 LED/m','5 m','IP65','5050'],
+    description:'Tira direccionable RGBW para efectos WLED y blanco dedicado. Ideal para proyectos donde quieres color y luz blanca real en el mismo sistema.',
+    images:['assets/products/strips/IMG_3230.webp','assets/products/strips/IMG_3231_1_.webp','assets/products/strips/IMG_3232.webp','assets/products/strips/IMG_3234.webp','assets/products/strips/IMG_3236.webp'],
+    tags:['WLED','RGBW','Alta densidad'],
+    technical:{voltage:5, ledPerMeter:60, currentPerMeter:3.6, ip:'IP65', chipset:'SK6812', ledPackage:'5050'}
+  },
+  {
+    id:'ws2815-12v-5m', type:'strip', name:'WS2815 RGB 12V 5m', subtitle:'60 LED/m · 12V · IP65', price:369,
+    specs:['WS2815','RGB','12V','60 LED/m','5 m','IP65','Backup data'],
+    description:'Tira RGB direccionable de 12V pensada para recorridos donde conviene reducir corriente y aprovechar la señal de respaldo.',
+    images:['assets/products/strips/IMG_3230.webp','assets/products/strips/IMG_3231_1_.webp','assets/products/strips/IMG_3232.webp'],
+    tags:['WLED','12V','Long-run'],
+    technical:{voltage:12, ledPerMeter:60, currentPerMeter:1.2, ip:'IP65', chipset:'WS2815', ledPackage:'5050'}
+  },
+  {
+    id:'ws2812b-5v-5m', type:'strip', name:'WS2812B RGB 5m', subtitle:'60 LED/m · 5V · IP65', price:249,
+    specs:['WS2812B','RGB','5V','60 LED/m','5 m','IP65','5050'],
+    description:'Opción de entrada para proyectos WLED, efectos dinámicos y kits compactos.',
+    images:['assets/products/strips/IMG_3230.webp','assets/products/strips/IMG_3232.webp','assets/products/strips/IMG_3234.webp'],
+    tags:['WLED','RGB','Starter'],
+    technical:{voltage:5, ledPerMeter:60, currentPerMeter:3.6, ip:'IP65', chipset:'WS2812B', ledPackage:'5050'}
+  },
+  {
+    id:'gledopto-wled-esp32', type:'controller', name:'GLEDOPTO ESP32 WLED Digital LED Controller', subtitle:'GL-C-015WL-D · Mic / UART', price:479,
+    specs:['ESP32','WiFi','WLED','Mic','UART','5-24V'],
+    description:'Controlador GLEDOPTO con ESP32 para WLED y tiras digitales. Las fotos corresponden al producto y su empaque original.',
+    images:['assets/products/controllers/gledopto/IMG_3242.webp','assets/products/controllers/gledopto/IMG_3243.webp','assets/products/controllers/gledopto/IMG_3244.webp','assets/products/controllers/gledopto/IMG_3245.webp','assets/products/controllers/gledopto/IMG_3246.webp','assets/products/controllers/gledopto/IMG_3247.webp'],
+    tags:['WLED','ESP32','GLEDOPTO'],
+    technical:{input:'DC 5-24V',maxOutput:'15A total',maxPerChannel:'10A',maxIC:'800'}
+  },
+  {
+    id:'gledopto-zigbee', type:'controller', name:'GLEDOPTO Zigbee 3.0 Pro', subtitle:'GL-C-008P', price:399,
+    specs:['Zigbee 3.0','GLEDOPTO','GL-C-008P'],
+    description:'Controlador para integración con ecosistemas Zigbee compatibles y automatización del hogar.',
+    images:['assets/products/controllers/gledopto/IMG_3246.webp','assets/products/controllers/gledopto/IMG_3247.webp'],
+    tags:['Zigbee','Smart Home'],
+    technical:{protocol:'Zigbee 3.0'}
+  },
+  {
+    id:'gledopto-mini-wled', type:'controller', name:'GLEDOPTO Mini WLED Controller', subtitle:'Compacto · WiFi', price:269,
+    specs:['WLED','WiFi','GLEDOPTO'],
+    description:'Controlador compacto pensado para kits de inicio y proyectos de menor escala.',
+    images:['assets/products/controllers/gledopto/IMG_3242.webp','assets/products/controllers/gledopto/IMG_3243.webp'],
+    tags:['WLED','Mini','Starter'],
+    technical:{protocol:'WiFi / WLED'}
+  },
+  {
+    id:'ps-5v-15a', type:'power', name:'Fuente Conmutada 5V 15A', subtitle:'75W', price:269,
+    specs:['5V','15A','75W','Conmutada'],
+    description:'Fuente conmutada para proyectos de 5V. Dimensiona la fuente con el calculador PixelLab antes de comprar.',
+    images:['assets/products/power/IMG_3248.webp','assets/products/power/IMG_3249.webp','assets/products/power/IMG_3250.webp','assets/products/power/IMG_3251.webp'],
+    tags:['5V','Fuente','75W'],
+    technical:{voltage:5, current:15, watts:75}
+  },
+  {
+    id:'ps-12v-5a-slim', type:'power', name:'Fuente Slim 12V 5A', subtitle:'60W', price:169,
+    specs:['12V','5A','60W','Slim'],
+    description:'Fuente delgada para proyectos de 12V y configuraciones donde se necesita ahorrar espacio.',
+    images:['assets/products/power/IMG_3250.webp','assets/products/power/IMG_3249.webp'],
+    tags:['12V','Slim','60W'],
+    technical:{voltage:12, current:5, watts:60}
+  },
+  {
+    id:'ps-5v-10a', type:'power', name:'Fuente Conmutada 5V 10A', subtitle:'50W', price:179,
+    specs:['5V','10A','50W'],
+    description:'Fuente de 5V para kits compactos y proyectos de menor escala.',
+    images:['assets/products/power/IMG_3248.webp','assets/products/power/IMG_3251.webp'],
+    tags:['5V','50W','Starter'],
+    technical:{voltage:5, current:10, watts:50}
+  },
+  {
+    id:'cable-jst', type:'accessory', name:'Kit cable cobre 20AWG + conectores JST', subtitle:'Accesorios de instalación', price:99,
+    specs:['20AWG','Cobre','JST'],
+    description:'Kit base para cableado y conexiones en proyectos PixelLab.',
+    images:['assets/products/strips/IMG_3231_1_.webp'],
+    tags:['Cableado','JST']
+  }
 ];
 
 window.PIXELLAB_KITS = [
@@ -20,5 +89,6 @@ window.PIXELLAB_KITS = [
 window.PIXELLAB_DEFAULTS = {
   currentByMeter:{'sk6812-rgbw-5m':3.6,'ws2812b-5v-5m':3.6,'ws2815-12v-5m':1.2},
   safetyFactor:1.25,
-  defaultPowerReserve:0.2
+  defaultPowerReserve:0.2,
+  electricityRate:2.25
 };
