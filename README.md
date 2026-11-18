@@ -53,9 +53,14 @@ Incluye:
 Nota: las calculadoras son orientativas. Para instalaciones finales deben validarse especificaciones del fabricante, caida de voltaje, proteccion, cableado y esquema de inyeccion.
 
 
-## Actualización v4 — Proyectos
+## Actualización v5 — Proyectos
 - Se añadieron fotografías reales extraídas de los dos videos proporcionados por el usuario.
 - La portada ahora utiliza los proyectos como elemento visual principal.
 - Se añadió una sección "Proyectos reales" con galería.
 - Las imágenes están en `assets/projects/`.
 - Las fotografías son fotogramas representativos de los videos originales para optimizar carga y usarlas como portada.
+
+
+## Proyecto añadido
+- Fachada residencial: `assets/projects/fachada-residencial/fachada-principal.jpeg`
+- Segunda escena: `assets/projects/fachada-residencial/fachada-ambiente.jpeg`
