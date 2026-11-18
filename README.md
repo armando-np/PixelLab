@@ -1,35 +1,24 @@
-# LumiCore v6 — static site for GitHub Pages / Cloudflare Pages
+# LumiCore site v9
 
-Esta versión integra:
-- Fondo azul moderno oscuro, sin fondo blanco principal.
-- Fotos reales de tiras LED, controladores GLEDOPTO y fuentes conmutadas.
-- Galería de producto con fotos reales y detalle técnico.
-- Portada con proyecto real de fachada.
-- Sección ¿Por qué LumiCore?
-- Tienda con precios del modelo financiero v2.
-- Kits Ready-to-Go.
-- Configurador de proyecto.
-- Calculadora de potencia.
-- Estimador de costo operativo.
-- Calculadora de caída de voltaje.
-- Comparador de tiras.
-- Contacto por WhatsApp: 56 3894 4059.
+Static site for LumiCore (lumicore.fyi): LED, WLED, IoT, domotics, kits, calculators and real projects.
 
-## Deploy en Cloudflare Pages
+## v9 updates
+- Visual hero using the selected LumiCore facade YouTube video (autoplay, muted, loop, playsinline).
+- Expanded **Proyectos reales** section with:
+  - Featured facade project using YouTube video `HYE6VvROQpk` plus real facade photography.
+  - Custom bus-stop project using `RripX0l6eDA`.
+  - Audio Reactive demo using `hY99emExgIY`.
+- Photo gallery for the facade project remains available.
+- Existing store, kits, configurator, calculators, WhatsApp and Instagram remain intact.
+
+## Deploy on Cloudflare Pages
+For this static version:
+- Build command: empty
+- Build output directory: `/`
 - Production branch: `main`
-- Build command: vacío
-- Output directory: `/`
 
-## GitHub Desktop
-Copia el contenido de esta carpeta dentro de tu repositorio local, reemplaza archivos y carpetas existentes, después:
+## Git workflow
+Copy the contents of this folder into your local GitHub repository, then use GitHub Desktop:
 1. Commit to main
 2. Push origin
-
-
-## Marca
-Marca: LumiCore
-Dominio: lumicore.fyi
-Favicon: assets/brand/favicon-512.png
-
-
-Instagram: https://www.instagram.com/lumicore.fyi/
+3. Cloudflare Pages deploys automatically
