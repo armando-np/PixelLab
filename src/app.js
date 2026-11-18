@@ -9,8 +9,9 @@ const product = id => products.find(x=>x.id===id);
 const num = (id,f=0)=>Math.max(0,Number(document.getElementById(id)?.value ?? f)||0);
 
 function imageFor(p){return p?.images?.[0] || ''}
-function gallery(p){return (p.images||[]).map((src,i)=>`<img class="thumb ${i===0?'active':''}" data-src="${src}" src="${src}" alt="${p.name} ${i+1}">`).join('')}
-function cardImage(p){const src=imageFor(p); return src ? `<img src="${src}" alt="${p.name}" loading="lazy">` : `<div class="visual-fallback"><span>${p.type==='strip'?'LED':'P'}</span></div>`;}
+function gallery(p){return (p.images||[]).map((src,i)=>`<img class="thumb ${i===0?'active':''}" data-src="${src}" src="${src}" alt="${p.name} ${i+1}" loading="lazy" decoding="async">`).join('')}
+function thumbFor(src){return src ? src.replace(/\/([^/]+)$/, '/thumbs/$1') : '';}
+function cardImage(p){const src=imageFor(p), thumb=thumbFor(src); return src ? `<img src="${thumb}" data-full="${src}" alt="${p.name}" loading="lazy" decoding="async" width="900" height="700">` : `<div class="visual-fallback"><span>${p.type==='strip'?'LED':'P'}</span></div>`;}
 
 function renderProducts(filter='all'){
   const grid=document.getElementById('productGrid');
@@ -35,7 +36,7 @@ function openCart(){document.getElementById('cartDrawer').classList.add('open');
 function closeCart(){document.getElementById('cartDrawer').classList.remove('open'); if(!document.getElementById('productModal').classList.contains('open'))document.getElementById('overlay').classList.remove('open')}
 function openProduct(id){
  const p=product(id); if(!p)return;
- document.getElementById('modalBody').innerHTML=`<div class="modal-layout"><div><div class="modal-gallery-main"><img id="modalMainImage" src="${p.images?.[0]||''}" alt="${p.name}"></div><div class="thumb-row">${gallery(p)}</div></div><div><div class="product-kicker">${p.type.toUpperCase()}</div><h2>${p.name}</h2><p class="modal-description">${p.description}</p><div class="specs">${p.specs.map(s=>`<span>${s}</span>`).join('')}</div>${p.technical?`<div class="technical-mini"><strong>Datos técnicos</strong><div>${Object.entries(p.technical).map(([k,v])=>`<span><b>${k}</b> ${v}</span>`).join('')}</div></div>`:''}<div class="modal-price">${money(p.price)}</div><div class="modal-actions"><button class="btn primary" data-modal-add="${p.id}">Agregar al carrito</button><a class="btn secondary" href="https://wa.me/525638944059?text=${encodeURIComponent('Hola LumiCore, me interesa '+p.name)}" target="_blank" rel="noopener">Consultar por WhatsApp</a></div></div></div>`;
+ document.getElementById('modalBody').innerHTML=`<div class="modal-layout"><div><div class="modal-gallery-main"><img id="modalMainImage" src="${p.images?.[0]||''}" alt="${p.name}" width="1200" height="900"></div><div class="thumb-row">${gallery(p)}</div></div><div><div class="product-kicker">${p.type.toUpperCase()}</div><h2>${p.name}</h2><p class="modal-description">${p.description}</p><div class="specs">${p.specs.map(s=>`<span>${s}</span>`).join('')}</div>${p.technical?`<div class="technical-mini"><strong>Datos técnicos</strong><div>${Object.entries(p.technical).map(([k,v])=>`<span><b>${k}</b> ${v}</span>`).join('')}</div></div>`:''}<div class="modal-price">${money(p.price)}</div><div class="modal-actions"><button class="btn primary" data-modal-add="${p.id}">Agregar al carrito</button><a class="btn secondary" href="https://wa.me/525638944059?text=${encodeURIComponent('Hola LumiCore, me interesa '+p.name)}" target="_blank" rel="noopener">Consultar por WhatsApp</a></div></div></div>`;
  document.getElementById('productModal').classList.add('open');document.getElementById('overlay').classList.add('open')
 }
 function closeModal(){document.getElementById('productModal').classList.remove('open');if(!document.getElementById('cartDrawer').classList.contains('open'))document.getElementById('overlay').classList.remove('open')}
@@ -65,6 +66,18 @@ function renderCalculator(kind){
  if(kind==='voltage'){const fn=()=>{const v=num('vdVoltage',5),a=num('vdCurrent',8),l=num('vdLength',5),awg=num('vdAwg',16),ohm={20:.0339,18:.0214,16:.0135,14:.00845,12:.00531}[awg]||.0135,drop=a*(ohm*(l*2)),pct=(drop/v)*100;document.getElementById('vdOutput').innerHTML=`<div><span>Caída estimada</span><strong>${drop.toFixed(2)} V</strong></div><div><span>Porcentaje</span><strong>${pct.toFixed(1)}%</strong></div><div><span>Voltaje final</span><strong>${Math.max(0,v-drop).toFixed(2)} V</strong></div><div class="wide-note">Modelo resistivo orientativo con ida y regreso. Con corrientes altas o recorridos largos, revisa inyección y conductor real.</div>`};['vdVoltage','vdCurrent','vdLength','vdAwg'].forEach(x=>document.getElementById(x).addEventListener('input',fn));fn()}
 }
 
+function initHeroVideo(){
+ const frame=document.querySelector('.hero-video-media iframe[data-src]');
+ const hero=document.querySelector('.hero-video');
+ if(!frame||!hero)return;
+ const load=()=>{if(frame.src)return; frame.src=frame.dataset.src; frame.addEventListener('load',()=>{frame.classList.add('is-loaded');hero.classList.add('has-video')},{once:true});};
+ const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const saveData=navigator.connection?.saveData;
+ if(reduced||saveData)return;
+ const delay=window.matchMedia('(max-width:640px)').matches?1800:900;
+ window.setTimeout(load,delay);
+}
+
 function setup(){
  document.querySelectorAll('[data-filter]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-filter]').forEach(x=>x.classList.remove('active'));b.classList.add('active');renderProducts(b.dataset.filter)});
  document.getElementById('showAll').onclick=()=>{document.querySelector('[data-filter="all"]')?.click();location.hash='tienda'};
@@ -73,7 +86,7 @@ function setup(){
  document.body.addEventListener('click',e=>{const add=e.target.closest('[data-add]');if(add)cartAdd(add.dataset.add);const rm=e.target.closest('[data-remove]');if(rm){cart.splice(Number(rm.dataset.remove),1);persistCart();renderCart()}const op=e.target.closest('[data-open-product]');if(op)openProduct(op.dataset.openProduct);const ma=e.target.closest('[data-modal-add]');if(ma)cartAdd(ma.dataset.modalAdd);const ka=e.target.closest('[data-kit-add]');if(ka)kitAdd(ka.dataset.kitAdd);const kv=e.target.closest('[data-kit]');if(kv){const k=kits.find(x=>x.id===kv.dataset.kit);if(k)openKit(k)}const th=e.target.closest('.thumb');if(th){const m=document.getElementById('modalMainImage');if(m)m.src=th.dataset.src;document.querySelectorAll('.thumb').forEach(x=>x.classList.remove('active'));th.classList.add('active')}});
  document.querySelectorAll('[data-tool]').forEach(b=>b.onclick=()=>{renderCalculator(b.dataset.tool);document.getElementById('calculator').scrollIntoView({behavior:'smooth',block:'start'})});
  document.getElementById('searchBtn').onclick=()=>document.getElementById('searchPanel').classList.toggle('open');
- initBuilder();renderProducts();renderKits();renderCart();
+ initBuilder();renderProducts();renderKits();renderCart();initHeroVideo();
 }
 function openKit(k){document.getElementById('modalBody').innerHTML=`<div class="product-kicker">KIT READY-TO-GO</div><h2>${k.name}</h2><p class="modal-description">${k.copy}</p><div class="kit-modal-list">${k.components.map(c=>`<div>${c}</div>`).join('')}</div><div class="modal-price">${money(k.price)}</div><div class="modal-actions"><button class="btn primary" data-kit-add="${k.id}">Agregar kit</button><a class="btn secondary" href="https://wa.me/525638944059?text=${encodeURIComponent('Hola LumiCore, me interesa el kit '+k.name)}" target="_blank" rel="noopener">Consultar</a></div>`;document.getElementById('productModal').classList.add('open');document.getElementById('overlay').classList.add('open')}
 

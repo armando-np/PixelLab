@@ -22,3 +22,17 @@ Copy the contents of this folder into your local GitHub repository, then use Git
 1. Commit to main
 2. Push origin
 3. Cloudflare Pages deploys automatically
+
+
+## v10 SEO y rendimiento
+- `robots.txt` y `sitemap.xml` listos para Search Console.
+- Metadatos Open Graph/Twitter, canonical y JSON-LD para Organization/WebSite/WebPage.
+- Páginas SEO estáticas para productos, proyectos, guía y herramientas.
+- Imágenes de catálogo con thumbnails optimizados para tarjetas móviles.
+- Video de portada diferido para reducir el trabajo inicial, especialmente en móvil.
+
+### Publicación
+1. Sube esta versión a GitHub y deja que Cloudflare Pages la despliegue.
+2. En Google Search Console añade `https://lumicore.fyi/` como propiedad.
+3. Envía `https://lumicore.fyi/sitemap.xml`.
+4. Usa la Inspección de URL para solicitar indexación de la home, guía y páginas de producto/proyecto prioritarias.
