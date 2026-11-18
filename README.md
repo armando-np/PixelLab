@@ -30,3 +30,6 @@ Copia el contenido de esta carpeta dentro de tu repositorio local, reemplaza arc
 Marca: LumiCore
 Dominio: lumicore.fyi
 Favicon: assets/brand/favicon-512.png
+
+
+Instagram: https://www.instagram.com/lumicore.fyi/
