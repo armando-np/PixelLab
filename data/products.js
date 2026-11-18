@@ -1,4 +1,4 @@
-window.PIXELLAB_PRODUCTS = [
+window.LUMICORE_PRODUCTS = [
   {
     id:'sk6812-rgbw-5m', type:'strip', name:'SK6812 RGBW 5m', subtitle:'60 LED/m · 5V · IP65', price:449,
     specs:['SK6812','RGBW','5V','60 LED/m','5 m','IP65','5050'],
@@ -50,7 +50,7 @@ window.PIXELLAB_PRODUCTS = [
   {
     id:'ps-5v-15a', type:'power', name:'Fuente Conmutada 5V 15A', subtitle:'75W', price:269,
     specs:['5V','15A','75W','Conmutada'],
-    description:'Fuente conmutada para proyectos de 5V. Dimensiona la fuente con el calculador PixelLab antes de comprar.',
+    description:'Fuente conmutada para proyectos de 5V. Dimensiona la fuente con el calculador LumiCore antes de comprar.',
     images:['assets/products/power/IMG_3248.webp','assets/products/power/IMG_3249.webp','assets/products/power/IMG_3250.webp','assets/products/power/IMG_3251.webp'],
     tags:['5V','Fuente','75W'],
     technical:{voltage:5, current:15, watts:75}
@@ -74,19 +74,19 @@ window.PIXELLAB_PRODUCTS = [
   {
     id:'cable-jst', type:'accessory', name:'Kit cable cobre 20AWG + conectores JST', subtitle:'Accesorios de instalación', price:99,
     specs:['20AWG','Cobre','JST'],
-    description:'Kit base para cableado y conexiones en proyectos PixelLab.',
+    description:'Kit base para cableado y conexiones en proyectos LumiCore.',
     images:['assets/products/strips/IMG_3231_1_.webp'],
     tags:['Cableado','JST']
   }
 ];
 
-window.PIXELLAB_KITS = [
+window.LUMICORE_KITS = [
   {id:'kit-architectural', name:'Architectural White & Color', badge:'RGBW', price:1090, market:1890, components:['SK6812 RGBW 5m','GLEDOPTO Zigbee 3.0 Pro','Fuente 5V 15A','Cable 20AWG + JST'], copy:'RGBW para ambientación y color con control inteligente.'},
   {id:'kit-pro-longrun', name:'Pro Long-Run 12V', badge:'12V', price:990, market:1690, components:['WS2815 RGB 12V 5m','GLEDOPTO WLED ESP32','Fuente 12V 5A Slim','Cable 20AWG'], copy:'Configuración orientada a recorridos de 12V.'},
   {id:'kit-starter-gamer', name:'Starter Gamer Volumétrico', badge:'STARTER', price:649, market:1190, components:['WS2812B RGB 5m','GLEDOPTO Mini WLED','Fuente 5V 10A','Cable 20AWG + JST'], copy:'Punto de entrada a WLED con un kit completo.'}
 ];
 
-window.PIXELLAB_DEFAULTS = {
+window.LUMICORE_DEFAULTS = {
   currentByMeter:{'sk6812-rgbw-5m':3.6,'ws2812b-5v-5m':3.6,'ws2815-12v-5m':1.2},
   safetyFactor:1.25,
   defaultPowerReserve:0.2,

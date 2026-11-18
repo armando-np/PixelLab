@@ -1,11 +1,11 @@
-# PixelLab v6 — static site for GitHub Pages / Cloudflare Pages
+# LumiCore v6 — static site for GitHub Pages / Cloudflare Pages
 
 Esta versión integra:
 - Fondo azul moderno oscuro, sin fondo blanco principal.
 - Fotos reales de tiras LED, controladores GLEDOPTO y fuentes conmutadas.
 - Galería de producto con fotos reales y detalle técnico.
 - Portada con proyecto real de fachada.
-- Sección ¿Por qué PixelLab?
+- Sección ¿Por qué LumiCore?
 - Tienda con precios del modelo financiero v2.
 - Kits Ready-to-Go.
 - Configurador de proyecto.
@@ -24,3 +24,9 @@ Esta versión integra:
 Copia el contenido de esta carpeta dentro de tu repositorio local, reemplaza archivos y carpetas existentes, después:
 1. Commit to main
 2. Push origin
+
+
+## Marca
+Marca: LumiCore
+Dominio: lumicore.fyi
+Favicon: assets/brand/favicon-512.png
