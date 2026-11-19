@@ -32,6 +32,14 @@ window.LUMICORE_PRODUCTS = [
     technical:{input:'DC 5-24V',maxOutput:'15A total',maxPerChannel:'10A',maxIC:'800'}
   },
   {
+    id:'gledopto-017wl-d', type:'controller', name:'GLEDOPTO GL-C-017WL-D', subtitle:'ESP32 WLED · 4 salidas · 5–24V', price:629,
+    specs:['ESP32','WLED','WiFi','4 salidas','Mic','UART','5–24V','15A total'],
+    description:'Controlador digital GLEDOPTO con ESP32 y WLED, cuatro salidas independientes, micrófono integrado para audio reactive, UART y alimentación DC 5–24V. Ideal para instalaciones multicanal y proyectos WLED que requieren distribución en varias salidas.',
+    images:['assets/products/controllers/gledopto/IMG_0690.webp','assets/products/controllers/gledopto/IMG_0691.webp','assets/products/controllers/gledopto/IMG_0692.webp','assets/products/controllers/gledopto/IMG_0693.webp'],
+    tags:['WLED','ESP32','4 salidas','GLEDOPTO','Audio Reactive'],
+    technical:{input:'DC 5–24V',outputs:4,totalOutput:'15A máx.',mic:'Integrado',uart:'Sí',levelShifter:'Sí'}
+  },
+  {
     id:'gledopto-zigbee', type:'controller', name:'GLEDOPTO Zigbee 3.0 Pro', subtitle:'GL-C-008P', price:549,
     specs:['Zigbee 3.0','GLEDOPTO','GL-C-008P'],
     description:'Controlador para integración con ecosistemas Zigbee compatibles y automatización del hogar.',
