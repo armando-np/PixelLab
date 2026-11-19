@@ -74,3 +74,5 @@ img{max-width:100%;height:auto}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero-video-media iframe{transition:none}.hero-video-fallback{transition:none}}
 @media (pointer:coarse){.btn,.ghost,.cart,.pill,.add{min-height:44px}.nav nav a{padding:10px 0}}
+
+.seo-link-card{display:block;text-decoration:none;color:inherit;background:linear-gradient(145deg,#0d2b4f,#081c34);border:1px solid var(--line);border-radius:18px;padding:20px;transition:transform .2s ease,border-color .2s ease,background .2s ease}.seo-link-card:hover{transform:translateY(-3px);border-color:#4fb7ff;background:linear-gradient(145deg,#12365e,#09223f)}.seo-link-card span{display:inline-block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#9fdfff;font-weight:800;margin-bottom:8px}.seo-link-card h3{margin:0 0 8px}.seo-link-card p{margin:0;color:var(--muted)}

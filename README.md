@@ -36,3 +36,9 @@ Copy the contents of this folder into your local GitHub repository, then use Git
 2. En Google Search Console añade `https://lumicore.fyi/` como propiedad.
 3. Envía `https://lumicore.fyi/sitemap.xml`.
 4. Usa la Inspección de URL para solicitar indexación de la home, guía y páginas de producto/proyecto prioritarias.
+
+
+## SEO v17
+- Added WLED Mexico landing page, WLED controller hub, comparison guides (WS2815 vs WS2812B, SK6812 vs WS2812B, 5V vs 12V), and LED/WLED installation CDMX service page.
+- Added internal links and sitemap entries for the new pages.
+- Added SEO link cards to the homepage.
