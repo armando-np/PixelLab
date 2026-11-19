@@ -89,9 +89,9 @@ window.LUMICORE_PRODUCTS = [
 ];
 
 window.LUMICORE_KITS = [
-  {id:'kit-architectural', name:'Architectural White & Color', badge:'RGBW', price:1390, market:1890, components:['SK6812 RGBW 5m','GLEDOPTO Zigbee 3.0 Pro','Fuente 5V 15A','Cable 20AWG + JST'], copy:'RGBW para ambientación y color con control inteligente.', componentImages:[['Tira LED','assets/products/strips/IMG_3230.webp'],['Controlador',''],['Fuente','assets/products/power/IMG_3248.webp']]},
+  {id:'kit-architectural', name:'Architectural White & Color', badge:'RGBW', price:1390, market:1890, components:['SK6812 RGBW 5m','GLEDOPTO Zigbee 3.0 Pro','Fuente 5V 15A','Cable 20AWG + JST'], copy:'RGBW para ambientación y color con control inteligente.', componentImages:[['Tira LED','assets/products/strips/IMG_3230.webp'],['Controlador','assets/products/controllers/gledopto/IMG_3246.webp'],['Fuente','assets/products/power/IMG_3248.webp']]},
   {id:'kit-pro-longrun', name:'Pro Long-Run 12V', badge:'12V', price:1290, market:1690, components:['WS2815 RGB 12V 5m','GLEDOPTO WLED ESP32','Fuente 12V 5A Slim','Cable 20AWG'], copy:'Configuración orientada a recorridos de 12V.', componentImages:[['Tira LED','assets/products/strips/ws2815-12v/ws2815-01.webp'],['Controlador','assets/products/controllers/gledopto/IMG_0690.webp'],['Fuente','assets/products/power/IMG_3250.webp']]},
-  {id:'kit-starter-gamer', name:'Starter Gamer Volumétrico', badge:'STARTER', price:949, market:1190, components:['WS2812B RGB 5m','GLEDOPTO Mini WLED','Fuente 5V 10A','Cable 20AWG + JST'], copy:'Punto de entrada a WLED con un kit completo.', componentImages:[['Tira LED',''],['Controlador',''],['Fuente','assets/products/power/IMG_3248.webp']]}
+  {id:'kit-starter-gamer', name:'Starter Gamer Volumétrico', badge:'STARTER', price:949, market:1190, components:['WS2812B RGB 5m','GLEDOPTO Mini WLED','Fuente 5V 10A','Cable 20AWG + JST'], copy:'Punto de entrada a WLED con un kit completo.', componentImages:[['Tira LED','assets/products/strips/IMG_3230.webp'],['Controlador','assets/products/controllers/gledopto/IMG_3242.webp'],['Fuente','assets/products/power/IMG_3248.webp']]}
 ];
 
 window.LUMICORE_DEFAULTS = {
